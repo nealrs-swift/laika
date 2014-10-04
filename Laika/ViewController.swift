@@ -10,6 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var ageInput: UITextField!
+    
+    @IBAction func convertButton(sender: UIButton) {
+        var age = Double((ageInput.text as NSString).doubleValue)*7
+        
+        ageInput.text = ""
+        ageInput.resignFirstResponder()
+        
+        ageLabel.text = "\(age)" + " dog years"
+        ageLabel.textColor = UIColor.blueColor()
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
